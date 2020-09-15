@@ -1,6 +1,6 @@
 const userInput = document.getElementById('input-number');
 const addBtn = document.getElementById('btn-add');
-const substarctBtn = document.getElementById('btn-substract');
+const substractBtn = document.getElementById('btn-subtract');
 const multiplyBtn = document.getElementById('btn-multiply');
 const divideBtn = document.getElementById('btn-divide');
 
@@ -12,3 +12,5 @@ function outputResults(result, text) {
     currentResultOutput.textContent = result ;
     currentCalculatonOutput.textContent = text;
 }
+
+

@@ -1,14 +1,59 @@
-const currentResult = 0;
+const defauleValue = 0;
+let currentResult = defauleValue;
 
-let numValue = 10;
+function getInputNumber (){
+
+   return parseInt(userInput.value);
+
+}
 
 
+function createAndWriteOutput ( operator , resultBefore , calcNumber){
+    
+    const calDescription = `${resultBefore} ${operator} ${calcNumber}`;
+    outputResults(currentResult, calDescription);
 
-let defauleValue = currentResult;
+}
 
-defauleValue = defauleValue + 10 * 8 / 2 ;
-
-let calculateDescription = `${defauleValue}=10 * 8 / 2 `; 
-
-outputResults(defauleValue, calculateDescription);
+function add (){
  
+    const enteredNumber = getInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult + enteredNumber ;
+    createAndWriteOutput('+', initialResult , enteredNumber);
+
+} 
+
+function substract (){
+
+    const enteredNumber = getInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult - enteredNumber ;
+    createAndWriteOutput('-', initialResult , enteredNumber);
+
+}
+
+function multiply () {
+
+    const enteredNumber = getInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult * enteredNumber ;
+    createAndWriteOutput('*', initialResult , enteredNumber);
+
+
+}
+
+
+function divide (){
+
+    const enteredNumber = getInputNumber();
+    const initialResult = currentResult;
+    currentResult = currentResult / enteredNumber ;
+    createAndWriteOutput('/', initialResult , enteredNumber);
+}
+
+
+addBtn.addEventListener("click" , add);
+substractBtn.addEventListener("click" , substract);
+multiplyBtn.addEventListener("click" , multiply);
+divideBtn.addEventListener("click", divide);
