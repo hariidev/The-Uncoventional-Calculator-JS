@@ -49,6 +49,17 @@ h1 {
     border-radius: 10%;
 }
 
+button {
+    padding: 5px;
+    margin: 10px;
+    background-color: blue;
+    border: 1px solid black;
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+}
+
+
 
 #results {
     margin-top: 10px;

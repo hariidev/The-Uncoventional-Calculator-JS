@@ -53,7 +53,17 @@ function divide (){
 }
 
 
+function clear (){
+
+    currentResult = 0;
+    const calDescription = 0;
+    userInput.value='';
+    outputResults(currentResult, calDescription);
+
+}
+
 addBtn.addEventListener("click" , add);
 substractBtn.addEventListener("click" , substract);
 multiplyBtn.addEventListener("click" , multiply);
 divideBtn.addEventListener("click", divide);
+clearBtn.addEventListener("click", clear)
