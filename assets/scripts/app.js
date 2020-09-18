@@ -1,9 +1,6 @@
 const defauleValue = 0;
 let currentResult = defauleValue;
-let addLogEntries = [];
-let substractLogEntries = [];
-let multiplyLogEntries = [];
-let divideLogEntries = [];
+let LogEntries = [];
 
 
 
@@ -22,14 +19,32 @@ function createAndWriteOutput ( operator , resultBefore , calcNumber){
 
 }
 
+function logEntry (operation, prevResult, number , result){
+
+    const logentry = {
+
+        operation : operation,
+        prevResult : prevResult,
+        number : number,
+        result : result
+    }
+    LogEntries.push(logentry);
+    console.log(LogEntries);
+}
+
+
+
+
+
 function add (){
  
     const enteredNumber = getInputNumber();
     const initialResult = currentResult;
     currentResult += enteredNumber ;
     createAndWriteOutput('+', initialResult , enteredNumber);
-    addLogEntries.push(enteredNumber);
-    console.log("AddLogEntries", addLogEntries);
+    logEntry('ADD', initialResult, enteredNumber, currentResult);
+
+    
 
 } 
 
@@ -39,8 +54,9 @@ function substract (){
     const initialResult = currentResult;
     currentResult -=  enteredNumber ;
     createAndWriteOutput('-', initialResult , enteredNumber);
-    substractLogEntries.push(enteredNumber);
-    console.log("SubstractLogEntries", substractLogEntries);
+    logEntry('SUBSTRACT', initialResult, enteredNumber, currentResult);
+    
+   
 
 }
 
@@ -50,8 +66,9 @@ function multiply () {
     const initialResult = currentResult;
     currentResult  *= enteredNumber ;
     createAndWriteOutput('*', initialResult , enteredNumber);
-    multiplyLogEntries.push(enteredNumber);
-    console.log("MultiplyLogEntries" ,multiplyLogEntries);
+    logEntry('MULTIPLY', initialResult, enteredNumber, currentResult);
+   
+    
 
 
 }
@@ -63,8 +80,8 @@ function divide (){
     const initialResult = currentResult;
     currentResult  /= enteredNumber ;
     createAndWriteOutput('/', initialResult , enteredNumber);
-    divideLogEntries.push(enteredNumber);
-    console.log("DivideLogEntries", divideLogEntries);
+    logEntry('DIVIDE', initialResult, enteredNumber, currentResult);
+   
 }
 
 
@@ -74,10 +91,7 @@ function clear (){
     const calDescription = 0;
     userInput.value='';
     outputResults(currentResult, calDescription);
-    addLogEntries.splice(0, addLogEntries.length);
-    substractLogEntries.splice(0, substractLogEntries.length);
-    multiplyLogEntries.splice(0, multiplyLogEntries.length);
-    divideLogEntries.splice(0, divideLogEntries.length);
+    LogEntries.splice(0, LogEntries.length);
     console.clear();
 
 }
